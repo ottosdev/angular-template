@@ -1,0 +1,46 @@
+<section
+  [ngClass]="{ 'w-20': !isMenuShow, 'w-70': isMenuShow }"
+  class="h-full bg-white text-black flex flex-col items-center rounded-[8px] overflow-y-auto transition-all duration-300"
+>
+  <header class="border-b-1 p-2 border-gray-300">
+    <div class="flex gap-2 items-center">
+      <p-avatar
+        image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+        [style]="{ width: '48px', height: '48px' }"
+      />
+
+      <div *ngIf="isMenuShow">
+        <h1 class="text-md font-bold">Bem-vindo, Otto</h1>
+        <p class="text-[12px] text-gray-500">Seu último acesso foi em 15/03</p>
+      </div>
+    </div>
+  </header>
+
+  <div
+    class="mt-3 flex flex-col h-full justify-between gap-2 p-3"
+    [ngClass]="{ 'w-full p-0': isMenuShow }"
+  >
+    <div class="flex flex-col gap-2">
+      @for (item of items; track $index) {
+        <a
+          [routerLink]="item.routerLink"
+          class="flex items-center justify-center gap-2 p-3 rounded-lg transition-colors duration-300 w-full"
+          [ngClass]="{
+            'bg-primary text-white': rotaAtiva(item.routerLink),
+            'bg-gray-300': !rotaAtiva(item.routerLink),
+          }"
+        >
+          <i class="{{ item.icon }}"></i>
+
+          <span *ngIf="isMenuShow">{{ item.label }}</span>
+        </a>
+      }
+    </div>
+    <button
+      class="flex items-center justify-center text-red-500 gap-2 p-3 rounded-lg transition-colors duration-300 w-full"
+    >
+    <i class="pi pi-sign-out"></i>
+      <span *ngIf="isMenuShow">Sair</span>
+    </button>
+  </div>
+</section>

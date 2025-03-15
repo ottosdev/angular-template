@@ -1,0 +1,13 @@
+<div class="flex h-screen">
+    <app-sidebar [isMenuShow]="isExpanded"></app-sidebar>
+
+    <main class="flex flex-1 flex-col">
+        <app-header (toggleSidebar)="toggleSidebar()"></app-header>
+
+        <app-breadcrumb></app-breadcrumb>
+
+        <div class="flex-1 p-4 overflow-y-auto bg-white rounded-[8px] mx-2 my-2 text-black">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</div>

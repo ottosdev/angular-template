@@ -1,0 +1,25 @@
+<p-toolbar
+  [style]="{ padding: '1rem 1rem 1rem 1.5rem', border: 'none', 'border-radius': '0px' }"
+  class="toolbar-teste"
+>
+  <ng-template #start>
+    <div class="flex items-center gap-4">
+      <button class="bg-primary" (click)="onToggleClick()">
+        <i class="pi pi-bars"></i>
+      </button>
+      <img
+        class="w-12 h-12 rounded-full"
+        src="https://i.pinimg.com/originals/9f/94/90/9f9490abf3fc285f590572f16939ae42.jpg"
+      />
+    </div>
+  </ng-template>
+
+  <ng-template #end>
+    <div class="flex items-center gap-2">
+      <p-avatar
+        image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+        [style]="{ width: '48px', height: '48px' }"
+      />
+    </div>
+  </ng-template>
+</p-toolbar>

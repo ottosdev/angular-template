@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "primeicons/primeicons.css";
+
+
+@layer base {
+  :root {
+    --color-primary: #69004D; /* Roxo Principal */
+    --color-secondary: #A12880; /* Roxo Claro */
+    --color-background: #F4F5F7; /* Fundo Cinza Claro */
+    --color-border: #80005A; /* Roxo Escuro (Bordas) */
+    --color-gray-medium: #6C757D; /* Cinza Médio (Botão Voltar) */
+    --color-blue-action: #0D6EFD; /* Azul (Botão Salvar Rascunho) */
+  }
+}
+
+html {
+  background-color:  var(--color-gray-medium) !important;
+}
+
+@layer utilities {
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .bg-background { background-color: var(--color-background); }
+  .border-borderColor { border-color: var(--color-border); }
+  .text-primary { color: var(--color-primary); }
+  .text-secondary { color: var(--color-secondary); }
+  .bg-grayMedium { background-color: var(--color-gray-medium); }
+  .bg-blueAction { background-color: var(--color-blue-action); }
+}
+
+button {
+  cursor: pointer;
+}
