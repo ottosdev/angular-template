@@ -1,0 +1,20 @@
+<!-- O form não precisa de ngClass -->
+<form [formGroup]="formGroup">
+  <p-floatlabel variant="on">
+    <div [ngClass]="{ 'ng-invalid ng-dirty': isInvalid() }">
+      <input
+        pInputText
+        [id]="id"
+        autocomplete="on"
+        [formControlName]="controlName"
+        class="w-full"
+      />
+    </div>
+    <label [attr.for]="id">{{ floatLabel }}</label>
+  </p-floatlabel>
+
+  <!-- ✅ Exibir a mensagem de erro corretamente -->
+  <div *ngIf="isInvalid()" class="text-red-500 text-sm mt-1">
+    Campo obrigatório ou inválido.
+  </div>
+</form>

@@ -1,0 +1,19 @@
+<form [formGroup]="formGroup">
+    <p-floatlabel variant="on">
+      <div [ngClass]="{ 'ng-invalid ng-dirty': isInvalid() }">
+        <p-inputmask
+          [id]="id"
+          [mask]="mask"
+          [formControlName]="controlName"
+          styleClass="w-full"
+        ></p-inputmask>
+      </div>
+      <label [attr.for]="id">{{ floatLabel }}</label>
+    </p-floatlabel>
+
+    @if (isInvalid()) {
+      <div class="text-red-500 text-sm mt-1">
+        Campo obrigatório ou inválido.
+      </div>
+    }
+</form>

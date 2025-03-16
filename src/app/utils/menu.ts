@@ -7,4 +7,9 @@ export const menus: MenuItem[] = [
     icon: 'pi pi-cog',
     routerLink: '/profile/settings',
   },
+  {
+    label: 'Cadastro Mulher',
+    icon: 'pi pi-plus',
+    routerLink: '/cadastro-mulher',
+  },
 ];

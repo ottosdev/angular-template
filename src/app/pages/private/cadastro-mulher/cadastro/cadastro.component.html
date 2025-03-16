@@ -1,0 +1,60 @@
+<div class="flex flex-col h-full overflow-hidden">
+  <main class="flex-auto flex justify-center items-center overflow-hidden p-2">
+\
+    <p-stepper [value]="activeStep" class="w-full w-full h-full">
+      <p-step-list>
+        <p-step [value]="1">Header I</p-step>
+        <p-step [value]="2">Header II</p-step>
+        <p-step [value]="3">Header III</p-step>
+      </p-step-list>
+
+      <p-step-panels class="h-full">
+        <p-step-panel [value]="1">
+          <ng-template #content let-activateCallback="activateCallback">
+            <div class="flex flex-col h-full justify-center items-center">
+              <h3>Content 1</h3>
+            </div>
+          </ng-template>
+        </p-step-panel>
+
+        <p-step-panel [value]="2">
+          <ng-template #content let-activateCallback="activateCallback">
+            <div class="flex flex-col h-full justify-center items-center">
+              <h3>Content II</h3>
+            </div>
+          </ng-template>
+        </p-step-panel>
+
+        <p-step-panel [value]="3">
+          <ng-template #content let-activateCallback="activateCallback">
+            <div class="flex flex-col h-full justify-center items-center">
+              <h3>Content III</h3>
+            </div>
+          </ng-template>
+        </p-step-panel>
+      </p-step-panels>
+    </p-stepper>
+  </main>
+
+  <footer class="p-3 shadow-2 surface-card flex justify-center gap-2">
+    @if (activeStep > 1) {
+      <p-button
+        label="Voltar"
+        icon="pi pi-arrow-left"
+        (onClick)="goToPreviousStep()"
+      ></p-button>
+    }
+
+    <p-button label="Salvar Rascunho" (onClick)="goToPreviousStep()"></p-button>
+
+    @if (activeStep < 3) {
+      <p-button
+        label="Avançar"
+        icon="pi pi-arrow-right"
+        iconPos="right"
+        (onClick)="goToNextStep()"
+        severity="success"
+      ></p-button>
+    }
+  </footer>
+</div>

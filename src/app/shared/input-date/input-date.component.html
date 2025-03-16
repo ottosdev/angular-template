@@ -1,0 +1,20 @@
+<form [formGroup]="formGroup">
+  <div class="w-full">
+    <p-floatlabel variant="on">
+      <p-datepicker
+        [formControlName]="controlName"
+        [iconDisplay]="'input'"
+        [showIcon]="true"
+        inputId="icondisplay"
+        [id]="id"
+        [styleClass]="isInvalid() ? 'ng-invalid ng-dirty w-full' : 'w-full'"
+      />
+      <label [attr.for]="id">{{ floatLabel }}</label>
+    </p-floatlabel>
+    @if (isInvalid()) {
+      <div class="text-red-500 text-sm mt-1">
+        Campo obrigatório ou inválido.
+      </div>
+    }
+  </div>
+</form>
